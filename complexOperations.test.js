@@ -88,37 +88,31 @@ describe('complexOperation - Unit Tests', () => {
     });
 
     // PASS
-    it('test with real params', () => {
+    it('Test with real params', () => {
       expect(complexOperations.sumGratherThan(5, 10, 20))
       .toBe('15 is less than 20');
     });
 
-    it('test with real params', () => {
+    it('Test with real params', () => {
       expect(complexOperations.sumGratherThan(2, 4, 2))
       .toBe('6 is grather than 2');
     });
   });
 
   describe('intersectionBetweenArrays', () => {
-    it('first test for intersectionBetweenArrays', () => {
-
+    // PASS
+    it('Correct params - intersectionBetweenArrays', () => {
+      expect(complexOperations.intersectionBetweenArrays([200, 455, 150], [1400, 455, 777])).toBe([455]);
     });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    // NOT PASS
+    it('Correct param - Not equal ok', () => {
+      expect(complexOperations.intersectionBetweenArrays([950, 459, 656], [454, 365, 498])).not.toEqual([100]);
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
-
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
-
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('Correct params - intersectionBetweenArrays', () => {
+      expect(complexOperations.intersectionBetweenArrays([])).toBe("The params should be arrays");
+    });
   });
 
   describe('sortArrayOfObjectsByKey', () => {
