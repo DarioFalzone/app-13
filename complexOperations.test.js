@@ -66,12 +66,12 @@ describe('complexOperation - Unit Tests', () => {
 
     });
 
-    it('test for first wrong measurements', () => {
-      expect(complexOperations.calculateArea('circle', 'robert', 3)).toBe('number1 and number2 should be numbers');
+    it('Test for first wrong measurements', () => {
+      expect(complexOperations.calculateArea('square', 'elefant', 30)).toBe('number1 and number2 should be numbers');
     });
 
-    it('test for first wrong measurements', () => {
-      expect(complexOperations.calculateArea('circle', 'robert', 'carlos')).toBe('number1 and number2 should be numbers');
+    it('Test for first wrong measurements', () => {
+      expect(complexOperations.calculateArea('rectangle', 'juan', 'carlos')).toBe('number1 and number2 should be numbers');
     });
   });
 
@@ -102,7 +102,7 @@ describe('complexOperation - Unit Tests', () => {
   describe('intersectionBetweenArrays', () => {
     // PASS
     it('Correct params - intersectionBetweenArrays', () => {
-      expect(complexOperations.intersectionBetweenArrays([200, 455, 150], [1400, 455, 777])).toBe([455]);
+      expect(complexOperations.intersectionBetweenArrays([200, 455, 150], [1400, 455, 777])).toStrictEqual([455]);
     });
 
     // NOT PASS
@@ -116,25 +116,25 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   describe('sortArrayOfObjectsByKey', () => {
-    it('first test for sortArrayOfObjectsByKey', () => {
-
+    // PASS
+    it('Test pass for sortArrayOfObjectsByKey', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{name: 'Dario'}, {name: 'Carlos'}, {name: 'Juan'}],'name'
+      )).toEqual([{name: 'Carlos'}, {name: 'Dario'}, {name: 'Juan'}]);
     });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    // NOT PASS
+    it('Is not a string - Test not pass for sortArrayOfObjectsByKey ', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{name: 'Apple'}, {name: 'Orange'}, {name: 'Kiwi'}], 1
+      )).toBe('The second param should be an string');
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
-
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
-
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('Property not coincidence - Test not pass for sortArrayOfObjectsByKey', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{name: 'Sword'}, {name: 'Shield'}, false], 'age'
+      )).toBe(`Some elements in the array does not have the age property`);
+    });
   });
 
   describe('numberOfOddAndEvenNumbers', () => {
