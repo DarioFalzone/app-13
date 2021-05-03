@@ -67,28 +67,36 @@ describe('complexOperation - Unit Tests', () => {
     });
 
     it('test for first wrong measurements', () => {
-      expect(complexOperations.calculateArea('circle', 'dog', 3))
-      .toBe('number1 and number2 should be numbers');
+      expect(complexOperations.calculateArea('circle', 'robert', 3)).toBe('number1 and number2 should be numbers');
+    });
+
+    it('test for first wrong measurements', () => {
+      expect(complexOperations.calculateArea('circle', 'robert', 'carlos')).toBe('number1 and number2 should be numbers');
     });
   });
 
   describe('sumGratherThan', () => {
+    // NOT PASS
+    it('Test wrong - Params incorrect', () => {
+      expect(complexOperations.sumGratherThan('dario', 2, 5))
+      .toBe('The params should be numbers');
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('Test wrong - Params incorrect', () => {
+      expect(complexOperations.sumGratherThan())
+      .toBe('The params should be numbers');
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    // PASS
+    it('test with real params', () => {
+      expect(complexOperations.sumGratherThan(5, 10, 20))
+      .toBe('15 is less than 20');
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
-
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('test with real params', () => {
+      expect(complexOperations.sumGratherThan(2, 4, 2))
+      .toBe('6 is grather than 2');
+    });
   });
 
   describe('intersectionBetweenArrays', () => {
