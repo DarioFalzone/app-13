@@ -1,8 +1,8 @@
-export const isNumber = number => {
+export const isNumber = (number) => {
   return typeof number === 'number';
 }
 
-export const isArray = array => {
+export const isArray = (array) => {
   return Array.isArray(array);
 }
 
@@ -57,9 +57,9 @@ export const sortArrayByKey = (array, key) => {
 }
 
 export const getEvenNumbersFromArray = (array) => {
-  return array.filter(element => element % 2 === 0);
+  return array.filter((element) => element % 2 === 0);
 };
 
 export const getOddNumbersFromArray = (array) => {
-  return array.filter(element => element % 2 !== 0);
+  return array.filter((element) => element % 2 !== 0);
 }
