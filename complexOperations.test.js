@@ -138,24 +138,27 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   describe('numberOfOddAndEvenNumbers', () => {
-    it('first test for numberOfOddAndEvenNumbers', () => {
-
+    // NOT PASS
+    it('Not have only numbers - Test nos pass for numberOfOddAndEvenNumbers', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers([1, 'NoName']
+      )).toBe('The array should have only numbers');
     });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('The param should be an array - Test nos pass for numberOfOddAndEvenNumbers', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers(
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+      )).toBe('The param should be an array');
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    // PASS
+    it('Equal Case - Test for numberOfOddAndEvenNumbers with correct params', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers([11, 9, 30, 14, 7]
+      )).toEqual({even: 2, odd: 3});
+    });
 
-    // it('Test - for', () => {
-    //   expect(variable.funcion()).toBe();
-    // })
+    it('Strict Equal Case - Test for numberOfOddAndEvenNumbers', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers([4.9, 77.6, 5.2, 8, 16.7]
+      )).toStrictEqual({even: 1, odd: 4});
+    });
   });
 });
